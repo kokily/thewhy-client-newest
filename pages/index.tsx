@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 import PageTemplate from '../components/common/PageTemplate';
 
 const IndexPage: NextPage = () => {
-  return <PageTemplate>IndexPage</PageTemplate>;
+  return <PageTemplate></PageTemplate>;
 };
 
 export default IndexPage;

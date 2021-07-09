@@ -16,7 +16,9 @@ const Layout = styled.div`
   width: 100%;
 `;
 
-const ChildBox = styled.main``;
+const ChildBox = styled.main`
+  margin-top: 11.813rem;
+`;
 
 interface Props {}
 
