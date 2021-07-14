@@ -1,9 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdClose } from 'react-icons/io';
 import useMedia from '../../../libs/hooks/useMedia';
 import HeaderNavList from './nav/HeaderNavList';
 import { media } from '../../../libs/styles/utils';
+import useHamburgerToggle from '../hooks/useHamburgerToggle';
 
 // Styles
 const Container = styled.div`
@@ -29,14 +31,25 @@ const HamburgerWrapper = styled.div`
     position: relative;
     margin-top: 20px;
     height: 60px;
+    transition: 0.2s all;
 
     svg {
       position: absolute;
       right: 30px;
-      background: #6799ff;
-      color: white;
       padding: 5px;
       border-radius: 3px;
+      cursor: pointer;
+
+      &.off {
+        background: #6799ff;
+        color: white;
+      }
+
+      &.on {
+        background: white;
+        color: #6799ff;
+        border: 1px solid #6799ff;
+      }
     }
   }
 `;
@@ -45,15 +58,20 @@ interface Props {}
 
 const HeaderNav: React.FC<Props> = () => {
   const isSmall = useMedia('(max-width: 992px)');
+  const { toggle, onToggle } = useHamburgerToggle();
 
   return (
     <Container>
       {isSmall ? (
         <HamburgerWrapper>
           <div className="wrapper">
-            <GiHamburgerMenu size={30} />
+            {toggle ? (
+              <IoMdClose className="on" size={30} onClick={onToggle} />
+            ) : (
+              <GiHamburgerMenu className="off" size={30} onClick={onToggle} />
+            )}
           </div>
-          <HeaderNavList />
+          <HeaderNavList toggle={toggle} />
         </HamburgerWrapper>
       ) : (
         <HeaderNavList />

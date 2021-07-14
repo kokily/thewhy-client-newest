@@ -15,7 +15,8 @@ const Container = styled.li`
   padding: 10px;
   font-size: 13px;
   font-weight: 700;
-  line-height: 20px;
+  line-height: 30px;
+  cursor: pointer;
   transition: 0.12s all;
 
   ${media.medium} {
@@ -43,6 +44,7 @@ const Title = styled.div`
 
   svg {
     color: #0088cc;
+    height: 30px;
   }
 `;
 
