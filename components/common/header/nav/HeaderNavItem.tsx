@@ -104,7 +104,7 @@ interface Props {
 const HeaderNavItem: React.FC<Props> = ({ menu }) => {
   const { home, edu, commu, toggleHome, toggleEdu, toggleCommu, offAll, ref } =
     useHeaderNav();
-  const isSmall = useMedia('(max-width: 768px)');
+  const isSmall = useMedia('(max-width: 992px)');
 
   return (
     <Container

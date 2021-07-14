@@ -24,6 +24,14 @@ const HeaderContainer = styled.header<{ move: number }>`
   height: 128px;
   transition: 0.3s;
 
+  ${media.large} {
+    width: 100%;
+  }
+
+  ${media.medium} {
+    width: 100%;
+  }
+
   ${(props) =>
     props.move > 80 &&
     css`
@@ -37,8 +45,17 @@ const NavContainer = styled.div`
   width: 1110px;
   height: 62px;
 
+  ${media.large} {
+    width: 760px;
+  }
+
   ${media.medium} {
+    width: 100%;
     height: 100%;
+  }
+
+  ${media.xsmall} {
+    width: 100%;
   }
 `;
 

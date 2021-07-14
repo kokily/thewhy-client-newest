@@ -14,6 +14,11 @@ const Container = styled.div`
   width: 100%;
   max-width: 1110px;
   border-bottom: 0.4px solid #dfdfdf;
+  transition: 0.2s all;
+
+  ${media.large} {
+    max-width: 760px;
+  }
 
   ${media.medium} {
     justify-content: center;

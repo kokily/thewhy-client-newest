@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import useMedia from '../../../libs/hooks/useMedia';
 import HeaderNavList from './nav/HeaderNavList';
+import { media } from '../../../libs/styles/utils';
 
 // Styles
 const Container = styled.div`
@@ -10,11 +11,19 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
+
+  ${media.xsmall} {
+    width: 100%;
+  }
 `;
 
 const HamburgerWrapper = styled.div`
   display: block;
   width: 768px;
+
+  ${media.xsmall} {
+    width: 100%;
+  }
 
   .wrapper {
     position: relative;
@@ -35,7 +44,7 @@ const HamburgerWrapper = styled.div`
 interface Props {}
 
 const HeaderNav: React.FC<Props> = () => {
-  const isSmall = useMedia('(max-width: 768px)');
+  const isSmall = useMedia('(max-width: 992px)');
 
   return (
     <Container>
