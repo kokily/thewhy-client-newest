@@ -1,5 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { media } from '../../libs/styles/utils';
 import HeaderNav from './header/HeaderNav';
 import HeaderTop from './header/HeaderTop';
 import useHeaderScroll from './hooks/useHeaderScroll';
@@ -24,7 +25,7 @@ const HeaderContainer = styled.header<{ move: number }>`
   transition: 0.3s;
 
   ${(props) =>
-    props.move > 100 &&
+    props.move > 80 &&
     css`
       height: 70px;
     `}
@@ -35,6 +36,10 @@ const NavContainer = styled.div`
   justify-content: center;
   width: 1110px;
   height: 62px;
+
+  ${media.medium} {
+    height: 100%;
+  }
 `;
 
 interface Props {}

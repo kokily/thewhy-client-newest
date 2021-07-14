@@ -13,7 +13,7 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   max-width: 1110px;
-  border-bottom: 0.4px solid #bebebe;
+  border-bottom: 0.4px solid #dfdfdf;
 
   ${media.medium} {
     justify-content: center;
