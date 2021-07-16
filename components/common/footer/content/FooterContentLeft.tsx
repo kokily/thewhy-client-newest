@@ -63,6 +63,43 @@ const UL = styled.ul`
   }
 `;
 
+const IconGroup = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  a {
+    margin-right: 0.25rem;
+  }
+
+  .icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .youtube {
+    transition: 0.2s all;
+    background-image: url('/svg/Youtube_off.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+      background-image: url('/svg/Youtube_on.svg');
+    }
+  }
+
+  .naver {
+    transition: 0.2s all;
+    background-image: url('/svg/Naver_off.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &:hover {
+      background-image: url('/svg/Naver_on.svg');
+    }
+  }
+`;
+
 interface Props {}
 
 const FooterContentLeft: React.FC<Props> = ({}) => {
@@ -92,6 +129,15 @@ const FooterContentLeft: React.FC<Props> = ({}) => {
           <p>thewhy@thewhy.kr</p>
         </li>
       </UL>
+
+      <IconGroup>
+        <a href="/">
+          <div className="icon youtube" />
+        </a>
+        <a href="/">
+          <div className="icon naver" />
+        </a>
+      </IconGroup>
     </Container>
   );
 };

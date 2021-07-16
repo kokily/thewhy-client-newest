@@ -43,6 +43,7 @@ const LinkBox = styled.div`
     flex: 0 0 50%;
     max-width: 50%;
     margin-bottom: 0;
+    margin-top: 1rem;
   }
 `;
 
