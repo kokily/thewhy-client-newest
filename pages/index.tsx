@@ -1,8 +1,11 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 import PageTemplate from '../components/common/PageTemplate';
+import HomeImage from '../components/home/HomeImage';
 
 const IndexPage: NextPage = () => {
+  const slideData = ['/images/index/main.png'];
+
   return (
     <>
       <Head>
@@ -12,7 +15,9 @@ const IndexPage: NextPage = () => {
         />
         <link rel="canonical" href="https://thewhy.kr" />
       </Head>
-      <PageTemplate>MainImage</PageTemplate>
+      <PageTemplate>
+        <HomeImage data={slideData} />
+      </PageTemplate>
     </>
   );
 };

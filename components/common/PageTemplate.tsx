@@ -21,6 +21,7 @@ const ChildBox = styled.main`
   display: block;
   width: 100%;
   margin-top: 208px;
+  max-width: 1110px;
 `;
 
 interface Props {}
