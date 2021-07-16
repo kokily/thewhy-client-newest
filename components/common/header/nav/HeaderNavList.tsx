@@ -5,30 +5,51 @@ import { media } from '../../../../libs/styles/utils';
 import HeaderNavItem from './HeaderNavItem';
 
 // Styles
-const Container = styled.nav`
+const Container = styled.nav<Props>`
   display: flex;
   justify-content: center;
   width: 100%;
+
+  ${media.medium} {
+    max-height: 50vh;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 0px;
+    padding-left: 0;
+    margin-bottom: 0;
+    transition: ease all 500ms showMenu;
+    flex-wrap: wrap;
+    display: none;
+    animation-name: showMenu;
+    animation-duration: 0.4s;
+
+    ${(props) =>
+      props.toggle &&
+      css`
+        display: flex;
+      `};
+  }
+
+  @keyframes showMenu {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
-const UL = styled.ul<Props>`
+const UL = styled.ul`
   display: flex;
   justify-content: space-between;
   width: 694.11px;
   list-style: none;
 
   ${media.medium} {
-    display: none;
-    justify-content: flex-start;
+    padding: 0 15px;
+    margin: 0;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
-
-    ${(props) =>
-      props.toggle &&
-      css`
-        display: flex;
-      `}
   }
 `;
 
@@ -38,8 +59,8 @@ interface Props {
 
 const HeaderNavList: React.FC<Props> = ({ toggle }) => {
   return (
-    <Container>
-      <UL className="menu" toggle={toggle}>
+    <Container toggle={toggle}>
+      <UL className="menu">
         {NavMenu?.map((menu) => (
           <HeaderNavItem key={menu.id} menu={menu} />
         ))}

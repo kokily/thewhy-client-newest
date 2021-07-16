@@ -33,13 +33,7 @@ function useHeaderNav() {
     setCommu(false);
   };
 
-  const handleClickOutside = (e) => {
-    if (!ref.current.contains(e.target)) {
-      setHome(false);
-      setEdu(false);
-      setCommu(false);
-    }
-  };
+  const handleClickOutside = (e) => {};
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

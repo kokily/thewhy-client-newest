@@ -8,17 +8,19 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   height: 2000px;
-  max-width: 1110px;
 `;
 
 const Layout = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
+  max-width: 1110px;
 `;
 
 const ChildBox = styled.main`
-  margin-top: 11.813rem;
+  display: block;
+  width: 100%;
+  margin-top: 208px;
 `;
 
 interface Props {}

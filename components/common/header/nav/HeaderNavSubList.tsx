@@ -5,32 +5,44 @@ import { media } from '../../../../libs/styles/utils';
 
 // Styles
 const Container = styled.li`
-  display: list-item;
-  text-align: -webkit-match-parent;
-  line-height: 24px;
+  display: block;
+  min-height: 42px;
+  line-height: 42px;
 
-  ${media.medium} {
-    width: 100%;
+  &:hover {
+    background: #f0f0f0;
   }
 
   a {
-    display: block;
-    width: 100%;
-    color: #777;
-    clear: both;
-    text-align: inherit;
-    white-space: nowrap;
-    background: transparent;
-    border: 0;
-    font-size: 14px;
+    font-size: 0.8rem;
     font-weight: 400;
-    padding: 6px 18px 6px 18px;
-    text-transform: none;
-    letter-spacing: -0.5px;
-    border-bottom: 1px solid #f6f6f6;
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #777;
+    width: auto;
+    min-width: 200px;
+    padding-left: 5px;
+    border-bottom: 1px solid #f7f7f7;
+  }
 
-    &:hover {
-      background: #f6f6f6;
+  ${media.medium} {
+    clear: both;
+    float: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    line-height: 24px;
+
+    a {
+      font-size: 13px;
+      font-style: normal;
+      line-height: 20px;
+      padding: 7px 22px !important;
+      margin: 1px 0;
+      display: block;
+      width: 100%;
+      clear: both;
+      white-space: nowrap;
+      color: #777 !important;
     }
   }
 `;

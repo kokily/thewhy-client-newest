@@ -14,28 +14,32 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
 
-  ${media.xsmall} {
+  ${media.medium} {
     width: 100%;
   }
 `;
 
 const HamburgerWrapper = styled.div`
-  display: block;
-  width: 768px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
 
-  ${media.xsmall} {
+  ${media.medium} {
     width: 100%;
   }
 
   .wrapper {
-    position: relative;
+    display: flex;
+    justify-content: flex-end;
     margin-top: 20px;
+    padding: 15px;
     height: 60px;
     transition: 0.2s all;
+    width: 100%;
+    max-width: 694.11px;
 
     svg {
-      position: absolute;
-      right: 30px;
       padding: 5px;
       border-radius: 3px;
       cursor: pointer;

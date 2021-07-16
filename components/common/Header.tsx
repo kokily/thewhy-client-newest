@@ -15,6 +15,8 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  z-index: 2000;
+  background: white;
 `;
 
 const HeaderContainer = styled.header<{ move: number }>`
@@ -22,7 +24,7 @@ const HeaderContainer = styled.header<{ move: number }>`
   justify-content: center;
   width: 1110px;
   height: 128px;
-  transition: 0.3s;
+  transition: 0.2s;
 
   ${media.large} {
     width: 100%;

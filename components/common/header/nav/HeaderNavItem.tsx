@@ -1,102 +1,103 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import styled, { css } from 'styled-components';
-import { IoIosArrowDown } from 'react-icons/io';
+import styled from 'styled-components';
+import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
 import HeaderNavSubList from './HeaderNavSubList';
-import useHeaderNav from '../../hooks/useHeaderNav';
 import { media } from '../../../../libs/styles/utils';
 import useMedia from '../../../../libs/hooks/useMedia';
 
 // Styles
 const Container = styled.li`
-  display: block;
+  display: inline-block;
   position: relative;
-  color: #505050;
-  padding: 10px;
-  font-size: 13px;
+  background: white;
+  font-size: 14px;
   font-weight: 700;
-  line-height: 30px;
-  cursor: pointer;
-  transition: 0.12s all;
+  color: #212529;
 
   ${media.medium} {
-    border-bottom: 1px solid #f6f6f6;
-    min-height: 50px;
-  }
-`;
+    border-bottom: 1px solid #e8e8e8;
+    clear: both;
+    display: block;
+    float: none;
+    margin: 0;
+    padding: 0;
+    line-height: 24px;
 
-const Title = styled.div`
-  display: flex;
-  padding-right: 50px;
+    a {
+      color: #0088cc;
+      font-size: 13px;
+      font-style: normal;
+      line-height: 20px;
+      padding: 7px 8px;
+      margin: 1px 0;
+    }
 
-  a {
-    cursor: pointer;
-    ${media.medium} {
-      width: 100%;
-      clear: both;
+    &.open {
+      .hidden {
+        display: block;
+      }
+    }
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 
-  a:hover,
-  a:hover::after {
-    color: #0088cc;
+  a {
+    display: inline-flex;
+    align-items: center;
+    white-space: normal;
+    cursor: pointer;
+    letter-spacing: -0.5px;
+    clear: both;
+
+    &:hover {
+      color: #0088cc;
+    }
   }
 
-  svg {
-    color: #0088cc;
-    height: 30px;
-  }
-`;
+  .hidden {
+    display: none;
+    position: absolute;
+    min-width: 200px;
+    padding: 10px 5px;
+    left: auto;
+    text-align: left;
+    box-shadow: 0 15px 30px -5px rgb(0 0 0 / 7%);
+    background: white;
+    background-clip: padding-box;
+    transform: translateX(-27%);
 
-const SubMenu = styled.ul<{ visible: boolean }>`
-  display: none;
-  list-style: none;
-  transition: 1.2s;
-
-  ${(props) =>
-    props.visible &&
-    css`
-      display: block;
-      position: absolute;
-      float: left;
-      min-width: 200px;
-      padding: 5px 0;
+    ${media.medium} {
+      background: transparent;
+      padding: 0;
       margin: 0;
-      top: 60px;
-      left: 0px;
-      text-align: left;
-      box-shadow: 0 15px 30px -5px rgb(0 0 0 / 7%);
       font-size: 13px;
+      box-shadow: none;
+      border-radius: 0;
+      border: 0;
+      clear: both;
+      display: none;
+      float: none;
+      position: static;
+      transform: none;
+      top: 100%;
+      left: 0;
+      z-index: 1000;
+      min-width: 10rem;
       color: #212529;
-      transform: translateX(-25%);
+    }
+  }
 
-      ${media.medium} {
-        position: static;
-        max-width: 768px;
-        width: 100%;
-        transform: none;
-        float: none;
-        top: 100%;
-        padding: 0;
-        margin: 0;
-        margin-left: 5px;
-        margin-top: 10px;
-
-        li {
-          min-height: 42px;
-          animation: 1.2s visibleDown;
-        }
-
-        @keyframes visibleDown {
-          0% {
-            height: 0;
-          }
-          100% {
-            height: 100%;
-          }
-        }
-      }
-    `}
+  a:hover + .hidden,
+  .hidden:hover {
+    @media (min-width: 769px) {
+      display: block;
+    }
+  }
 `;
 
 interface Props {
@@ -104,64 +105,32 @@ interface Props {
 }
 
 const HeaderNavItem: React.FC<Props> = ({ menu }) => {
-  const { home, edu, commu, toggleHome, toggleEdu, toggleCommu, offAll, ref } =
-    useHeaderNav();
   const isSmall = useMedia('(max-width: 992px)');
+  const [toggle, setToggle] = useState('');
+
+  const onToggle = () => {
+    if (toggle === 'open') {
+      setToggle('');
+    } else {
+      setToggle('open');
+    }
+  };
 
   return (
-    <Container
-      ref={ref}
-      onClick={
-        menu.url === '/about'
-          ? toggleHome
-          : menu.url === '/education'
-          ? toggleEdu
-          : toggleCommu
-      }
-    >
+    <Container className={`main ${toggle}`}>
       {menu.items ? (
         <>
-          {isSmall ? (
-            <>
-              <Title>
-                <a>{menu.title}</a>
-                <IoIosArrowDown size={15} />
-              </Title>
-              <SubMenu
-                visible={
-                  menu.url === '/about' ? home : menu.url === '/education' ? edu : commu
-                }
-              >
-                {menu.items.map((item) => (
-                  <HeaderNavSubList key={item.id} item={item} />
-                ))}
-              </SubMenu>
-            </>
-          ) : (
-            <>
-              <a
-                onMouseOver={
-                  menu.url === '/about'
-                    ? toggleHome
-                    : menu.url === '/education'
-                    ? toggleEdu
-                    : toggleCommu
-                }
-                onClick={offAll}
-              >
-                {menu.title}
-              </a>
-              <SubMenu
-                visible={
-                  menu.url === '/about' ? home : menu.url === '/education' ? edu : commu
-                }
-              >
-                {menu.items.map((item) => (
-                  <HeaderNavSubList key={item.id} item={item} />
-                ))}
-              </SubMenu>
-            </>
-          )}
+          <a onClick={onToggle} className="title">
+            <span>{menu.title}</span>
+            {isSmall && (
+              <>{toggle ? <IoIosArrowUp size={14} /> : <IoIosArrowDown size={14} />}</>
+            )}
+          </a>
+          <ul className="hidden">
+            {menu.items.map((item) => (
+              <HeaderNavSubList key={item.id} item={item} />
+            ))}
+          </ul>
         </>
       ) : (
         <Link href={menu.url}>
