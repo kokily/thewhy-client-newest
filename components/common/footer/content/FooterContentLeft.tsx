@@ -18,8 +18,8 @@ const Container = styled.div`
     color: #fff;
     letter-spacing: -0.02rem;
     line-height: 18px;
+    margin: 0 0 14px 0;
     margin-bottom: 1rem;
-    padding-bottom: 0.25rem;
     -webkit-font-smoothing: antialiased;
   }
 
