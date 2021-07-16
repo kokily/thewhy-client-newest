@@ -63,7 +63,7 @@ const Container = styled.li`
     display: none;
     position: absolute;
     min-width: 200px;
-    padding: 10px 5px;
+    padding: 5px 5px;
     left: auto;
     text-align: left;
     box-shadow: 0 15px 30px -5px rgb(0 0 0 / 7%);

@@ -13,6 +13,10 @@ const Container = styled.li`
     background: #f0f0f0;
   }
 
+  &:last-child a {
+    border: none;
+  }
+
   a {
     font-size: 0.8rem;
     font-weight: 400;
