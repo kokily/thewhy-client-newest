@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { media } from '../../../libs/styles/utils';
 
 // Styles
 const Container = styled.div`
@@ -23,6 +24,11 @@ const CopyBox = styled.div`
     margin-right: -15px;
     padding-top: 24px;
     padding-bottom: 24px;
+
+    ${media.small} {
+      display: block;
+      text-align: center;
+    }
   }
 `;
 
@@ -34,6 +40,13 @@ const PanePart = styled.div`
   padding-right: 15px;
   justify-content: flex-start;
   align-items: center;
+
+  ${media.small} {
+    display: inline-block;
+    flex: none !important;
+    max-width: 100% !important;
+    margin-bottom: 1.25rem;
+  }
 
   &.logo {
     flex: 0 0 8.333333%;

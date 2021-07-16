@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ImLocation } from 'react-icons/im';
 import { AiOutlineMail } from 'react-icons/ai';
+import { media } from '../../../../libs/styles/utils';
 
 // Styles
 const Container = styled.div`
@@ -12,6 +13,13 @@ const Container = styled.div`
   padding-left: 15px;
   padding-right: 15px;
 
+  ${media.small} {
+    display: inline-block;
+    flex: none;
+    max-width: 370px;
+    margin-bottom: 1.25rem;
+  }
+
   h5 {
     font-size: 1rem;
     font-weight: 600;
@@ -21,6 +29,7 @@ const Container = styled.div`
     margin: 0 0 14px 0;
     margin-bottom: 1rem;
     -webkit-font-smoothing: antialiased;
+    text-align: left;
   }
 
   p {
@@ -34,6 +43,7 @@ const Container = styled.div`
 
     color: #777;
     margin: 0 0 10px;
+    text-align: left;
   }
 `;
 

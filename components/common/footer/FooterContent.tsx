@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { media } from '../../../libs/styles/utils';
 import FooterContentLeft from './content/FooterContentLeft';
 import FooterContentRight from './content/FooterContentRight';
 
@@ -50,6 +51,11 @@ const Content = styled.div`
   padding-bottom: 3rem;
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
+
+  ${media.small} {
+    display: block;
+    text-align: center;
+  }
 `;
 
 interface Props {}

@@ -2,6 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { MdKeyboardArrowRight } from 'react-icons/md';
+import { media } from '../../../../libs/styles/utils';
 
 // Styles
 const Container = styled.div`
@@ -12,6 +13,12 @@ const Container = styled.div`
   padding-left: 12px;
   padding-right: 12px;
 
+  ${media.small} {
+    display: inline-block;
+    flex: none;
+    max-width: 370px;
+  }
+
   h5 {
     font-size: 1rem;
     font-weight: 600;
@@ -19,12 +26,14 @@ const Container = styled.div`
     margin: 0 0 14px 0;
     margin-bottom: 0.25rem;
     color: #fff;
+    text-align: left;
   }
 
   p {
     color: #777;
     margin-top: 0.6rem;
     margin-bottom: 0.6rem;
+    text-align: left;
   }
 `;
 
@@ -55,9 +64,10 @@ const UL = styled.ul`
 
   li {
     position: relative;
-    padding-left: 16px;
+    padding-left: 20px;
     margin-bottom: 0.4rem;
     color: #777;
+    text-align: left;
 
     svg {
       position: absolute;
