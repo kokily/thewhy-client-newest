@@ -10,3 +10,11 @@ interface ItemType {
   subTitle: string;
   subUrl: string;
 }
+
+interface MainLinkType {
+  id: number;
+  url: string;
+  img: string;
+  title: string;
+  sub: string;
+}
