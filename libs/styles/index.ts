@@ -37,6 +37,42 @@ const GlobalStyle = createGlobalStyle`
     font-family: '윤고딕350';
     src: url('/fonts/윤고딕350.ttf');
   }
+
+  @-webkit-keyframes mask5Up {
+    from {
+      transform: translate(0, 5%);
+    }
+    to {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes mask5Up {
+    from {
+      transform: translate(0, 5%);
+    }
+    to {
+      transform: translate(0, 0);
+    }
+  }
+
+  @-webkit-keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 export default GlobalStyle;
