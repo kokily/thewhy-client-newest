@@ -1,9 +1,13 @@
 import Head from 'next/head';
 import { AppProps } from 'next/app';
+import { ApolloProvider } from '@apollo/client';
 import GlobalStyle from '../libs/styles';
 import { RecoilRoot } from 'recoil';
+import { useApollo } from '../libs/apollo/client';
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const client = useApollo(pageProps);
+
   return (
     <>
       <Head>
@@ -15,9 +19,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <GlobalStyle />
-      <RecoilRoot>
-        <Component {...pageProps} />
-      </RecoilRoot>
+
+      <ApolloProvider client={client}>
+        <RecoilRoot>
+          <Component {...pageProps} />
+        </RecoilRoot>
+      </ApolloProvider>
     </>
   );
 }
