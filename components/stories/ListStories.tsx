@@ -3,6 +3,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { media } from '../../libs/styles/utils';
 import Search from '../common/Search';
+import CardList from './list/CardList';
 
 // Styles
 const Container = styled.div`
@@ -54,6 +55,8 @@ const ListStories: React.FC<Props> = ({
             onKeyPress={onKeyPress}
           />
         </SearchBox>
+
+        <CardList stories={stories} me={me} />
       </Contents>
     </Container>
   );
