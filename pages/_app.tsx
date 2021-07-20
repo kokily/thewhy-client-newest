@@ -26,10 +26,10 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cec30f2d8f996a53cca24b45925dea37&libraries=services" />
       </Head>
-      <GlobalStyle />
 
       <ApolloProvider client={client}>
         <RecoilRoot>
+          <GlobalStyle />
           <Component {...pageProps} />
         </RecoilRoot>
       </ApolloProvider>
