@@ -46,6 +46,7 @@ const Title = styled.div`
     color: #777;
     word-break: keep-all;
     margin: 0 0 20px;
+    white-space: pre-wrap;
   }
 `;
 
@@ -85,11 +86,16 @@ const Contents = styled.div`
       flex: 0 0 66.666667%;
       max-width: 66.666667%;
       border-top: 2px solid rgb(73, 53, 134);
-      padding-top: 1.2rem;
-      margin-bottom: 0.3rem;
       font-family: 윤고딕320;
       font-size: 17px;
       color: #777;
+      margin-top: 0;
+      padding-top: 1.2rem;
+
+      &.end {
+        border-bottom: 2px solid rgb(73, 53, 134);
+        padding-bottom: 1.2rem;
+      }
 
       li {
         line-height: 1.6;
@@ -105,6 +111,7 @@ interface Props {
   data: {
     img: string;
     list: string[];
+    end?: boolean;
   }[];
 }
 
@@ -120,7 +127,7 @@ const Communication: React.FC<Props> = ({ img, title, body, data }) => {
 
       <Contents>
         {data.map((item, i) => (
-          <List key={i} img={item.img} list={item.list} />
+          <List key={i} img={item.img} list={item.list} end={item.end} />
         ))}
       </Contents>
     </Container>

@@ -34,6 +34,7 @@ const Service: React.FC<Props> = () => {
         '서비스 품질 모니터링',
         '서비스 매뉴얼 제작',
       ],
+      end: true,
     },
   ];
 
