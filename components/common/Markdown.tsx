@@ -42,7 +42,7 @@ const Container = styled.div`
   h4 {
     font-weight: bold;
     margin-top: 2rem;
-    color: #1b3bf5;
+    color: #4056b9;
   }
   h1,
   h2,

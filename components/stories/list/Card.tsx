@@ -10,6 +10,7 @@ const Container = styled.div`
   padding: 5px 5px 0 5px;
   flex: 0 0 25%;
   max-width: 25%;
+  user-select: none;
 
   ${media.large} {
     flex: 0 0 33.33333%;
@@ -119,16 +120,17 @@ const Content = styled.div`
 
 interface Props {
   story: StoryType;
+  onDetail: (id: string) => void;
 }
 
-const Card: React.FC<Props> = ({ story }) => {
+const Card: React.FC<Props> = ({ story, onDetail }) => {
   return (
     <Container>
       <div className="card">
-        <img src={story.thumbnail} alt={story.title} />
+        <img src={story.thumbnail} alt={story.title} onClick={() => onDetail(story.id)} />
 
         <Content>
-          <h4>{story.title}</h4>
+          <h4 onClick={() => onDetail(story.id)}>{story.title}</h4>
           <p>{new Date(story.created_at).toLocaleDateString()} 작성</p>
           <p className="tag">
             {story.tags.slice(0, 3).map((tag) => (

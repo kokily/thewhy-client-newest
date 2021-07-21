@@ -20,16 +20,16 @@ const Container = styled.div`
 
 interface Props {
   stories: StoryType[];
-  me: MeType | null;
+  onDetail: (id: string) => void;
 }
 
-const CardList: React.FC<Props> = ({ stories }) => {
+const CardList: React.FC<Props> = ({ stories, onDetail }) => {
   return (
     <Container>
       {stories && stories.length > 0 ? (
         <>
           {stories.map((story) => (
-            <Card key={story.id} story={story} />
+            <Card key={story.id} story={story} onDetail={onDetail} />
           ))}
         </>
       ) : (

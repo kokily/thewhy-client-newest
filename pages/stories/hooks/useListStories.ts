@@ -1,9 +1,11 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
+import { useRouter } from 'next/router';
 import { useQuery } from '@apollo/react-hooks';
 import useScrollStories from './useScrollStories';
 import { ME } from '../../../libs/graphql/auth';
 
 function useListStories() {
+  const router = useRouter();
   const [search, setSearch] = useState('');
   const [title, setTitle] = useState('');
   const { data, loading, error } = useScrollStories(title);
@@ -29,12 +31,17 @@ function useListStories() {
     }
   };
 
+  const onDetail = (id: string) => {
+    router.push(`/stories/${id}`);
+  };
+
   return {
     stories: data?.ListStories.stories || [],
     search,
     onChange,
     onSearch,
     onKeyPress,
+    onDetail,
     me: me?.Me.me,
     loading,
     error,

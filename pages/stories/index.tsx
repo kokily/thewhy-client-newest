@@ -19,6 +19,7 @@ const ListStoriesPage: NextPage<Props> = ({ metaBody, metaTags }) => {
     onChange,
     onSearch,
     onKeyPress,
+    onDetail,
     me,
     loading,
     error,
@@ -45,6 +46,7 @@ const ListStoriesPage: NextPage<Props> = ({ metaBody, metaTags }) => {
           onChange={onChange}
           onSearch={onSearch}
           onKeyPress={onKeyPress}
+          onDetail={onDetail}
           me={me}
         />
       </PageTemplate>

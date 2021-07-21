@@ -58,6 +58,7 @@ interface Props {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   onSearch: (e: React.MouseEvent) => void;
   onKeyPress: (e: React.KeyboardEvent<HTMLInputElement>) => void;
+  onDetail: (id: string) => void;
   me: MeType | null;
 }
 
@@ -67,6 +68,7 @@ const ListStories: React.FC<Props> = ({
   onChange,
   onSearch,
   onKeyPress,
+  onDetail,
   me,
 }) => {
   const isSmall = useMedia('(max-width: 768px)');
@@ -75,7 +77,7 @@ const ListStories: React.FC<Props> = ({
     <Container>
       <Contents>
         <SearchBox small={isSmall}>
-          {!isSmall && (
+          {!isSmall && me && (
             <Link href="/stories/add">
               <Button>글 작성</Button>
             </Link>
@@ -90,7 +92,7 @@ const ListStories: React.FC<Props> = ({
           />
         </SearchBox>
 
-        <CardList stories={stories} me={me} />
+        <CardList stories={stories} onDetail={onDetail} />
       </Contents>
     </Container>
   );
