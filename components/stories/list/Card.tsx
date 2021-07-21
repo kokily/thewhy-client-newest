@@ -7,9 +7,14 @@ const Container = styled.div`
   display: block;
   position: relative;
   width: 100%;
-  padding: 5px;
-  flex: 0 0 33.33333%;
-  max-width: 33.33333%;
+  padding: 5px 5px 0 5px;
+  flex: 0 0 25%;
+  max-width: 25%;
+
+  ${media.large} {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
 
   ${media.medium} {
     flex: 1 1 50%;
@@ -52,7 +57,7 @@ const Container = styled.div`
 const Content = styled.div`
   flex: 1 1 auto;
   min-height: 1px;
-  padding: 2rem 0.2rem;
+  padding: 2rem 0.2rem 0 0.2rem;
   h4 {
     font-family: '윤고딕340';
     font-size: 23px;
@@ -64,12 +69,18 @@ const Content = styled.div`
     font-weight: 600;
     line-height: 27px;
     margin: 0 0 14px 0;
+    cursor: pointer;
+
     &:before {
       content: '';
       display: block;
       border-top: 3px solid rgb(34, 139, 230);
       width: 100px;
       margin: -20px auto 5px;
+    }
+
+    &:hover {
+      color: #9930b9;
     }
   }
   p {
@@ -80,8 +91,29 @@ const Content = styled.div`
     word-break: keep-all;
     font-family: '윤고딕310';
     font-size: 19px;
-    color: #000000;
+    color: #616161;
     line-height: 1.3;
+    margin-bottom: 0;
+
+    &.tag {
+      font-size: 0.9rem;
+      font-weight: bold;
+      overflow: hidden;
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      span {
+        margin-right: 0.5rem;
+        color: #1251fb;
+        opacity: 0.6;
+        transition: 0.2s;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
   }
 `;
 
@@ -97,7 +129,12 @@ const Card: React.FC<Props> = ({ story }) => {
 
         <Content>
           <h4>{story.title}</h4>
-          <p>{new Date(story.created_at).toLocaleDateString()}</p>
+          <p>{new Date(story.created_at).toLocaleDateString()} 작성</p>
+          <p className="tag">
+            {story.tags.slice(0, 3).map((tag) => (
+              <span key={tag}>#{tag}</span>
+            ))}
+          </p>
         </Content>
       </div>
     </Container>
