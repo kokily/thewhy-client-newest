@@ -45,6 +45,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'DancingScript-Regular';
     src: url('/fonts/DancingScript-Regular.ttf');
   }
+  @font-face {
+    font-family: 'NanumGothic-Regular';
+    src: url('/fonts/NanumGothic-Regular.ttf');
+  }
 
   @-webkit-keyframes mask5Up {
     from {

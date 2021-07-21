@@ -41,3 +41,25 @@ interface NoticeType {
   created_at: string;
   updated_at?: string;
 }
+
+interface QuestionType {
+  id: string;
+  name: string;
+  phone?: string;
+  email?: string;
+  isReply: boolean;
+  title: string;
+  body: string;
+  replyId: string;
+  reply: ReplyType;
+  created_at: string;
+  updated_at?: string;
+}
+
+interface ReplyType {
+  id: string;
+  body: string;
+  questionId: string;
+  created_at: string;
+  updated_at?: string;
+}
