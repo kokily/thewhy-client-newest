@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from '../../libs/styles/utils';
 import Markdown from '../common/Markdown';
-import useDayModal from './hooks/useDayModal';
-import ReadButton from './read/ReadButton';
+import useDayModal from '../../libs/hooks/useDayModal';
+import ReadButton from '../common/ReadButton';
 
 // Styles
 const Container = styled.div`
@@ -101,7 +101,7 @@ interface Props {
 
 const ReadStory: React.FC<Props> = ({ story, me, onRemove, onUpdate }) => {
   const { month, day, dayOfWeek, modal, onRemoveClick, onConfirm, onCancel } =
-    useDayModal({ story, onRemove });
+    useDayModal({ target: story, onRemove });
 
   return (
     <Container>

@@ -12,7 +12,6 @@ interface Props {
 }
 
 const ListNoticesPage: NextPage<Props> = ({ metaBody }) => {
-  useAdmin();
   const {
     notice,
     lastPage,
