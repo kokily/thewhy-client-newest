@@ -37,6 +37,14 @@ const GlobalStyle = createGlobalStyle`
     font-family: '윤고딕350';
     src: url('/fonts/윤고딕350.ttf');
   }
+  @font-face {
+    font-family: 'Fuggles-Regular';
+    src: url('/fonts/Fuggles-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'DancingScript-Regular';
+    src: url('/fonts/DancingScript-Regular.ttf');
+  }
 
   @-webkit-keyframes mask5Up {
     from {

@@ -38,7 +38,7 @@ const Ribbon = styled.div`
   span {
     color: #fff;
     font-size: 1.6em;
-    font-family: 'Shadows Into Light', cursive;
+    font-family: 'DancingScript-Regular';
   }
 `;
 
