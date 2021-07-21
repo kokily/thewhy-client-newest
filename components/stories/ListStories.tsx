@@ -40,13 +40,19 @@ const Button = styled.a`
   }
 `;
 
-const SearchBox = styled.div<{ small: boolean }>`
+const SearchBox = styled.div<{ small: boolean; me: MeType }>`
   display: flex;
   width: 100%;
   justify-content: space-between;
 
   ${(props) =>
     props.small &&
+    css`
+      justify-content: flex-end;
+    `}
+
+  ${(props) =>
+    !props.me &&
     css`
       justify-content: flex-end;
     `}
@@ -76,7 +82,7 @@ const ListStories: React.FC<Props> = ({
   return (
     <Container>
       <Contents>
-        <SearchBox small={isSmall}>
+        <SearchBox small={isSmall} me={me}>
           {!isSmall && me && (
             <Link href="/stories/add">
               <Button>글 작성</Button>
