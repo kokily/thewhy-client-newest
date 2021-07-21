@@ -32,3 +32,12 @@ interface StoryType {
 interface MeType {
   adminId: string;
 }
+
+interface NoticeType {
+  id: string;
+  num: number;
+  title: string;
+  body: string;
+  created_at: string;
+  updated_at?: string;
+}
