@@ -1,25 +1,7 @@
 import { useCallback, useState } from 'react';
-import { gql } from '@apollo/client';
 import { useQuery } from '@apollo/react-hooks';
+import { LIST_STORIES } from '../graphql';
 import useScroll from '../../../libs/hooks/useScroll';
-
-export const LIST_STORIES = gql`
-  query ListStories($title: String, $tag: String, $cursor: ID) {
-    ListStories(title: $title, tag: $tag, cursor: $cursor) {
-      ok
-      error
-      stories {
-        id
-        title
-        body
-        thumbnail
-        tags
-        created_at
-        updated_at
-      }
-    }
-  }
-`;
 
 function useScrollStories(title?: string) {
   const { data, loading, error, fetchMore } = useQuery<{

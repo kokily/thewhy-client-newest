@@ -4,6 +4,7 @@ import { ApolloProvider } from '@apollo/client';
 import GlobalStyle from '../libs/styles';
 import { RecoilRoot } from 'recoil';
 import { useApollo } from '../libs/apollo/client';
+import 'react-quill/dist/quill.snow.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   const client = useApollo(pageProps);
