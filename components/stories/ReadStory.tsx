@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { media } from '../../libs/styles/utils';
 import Markdown from '../common/Markdown';
 import useDayModal from './hooks/useDayModal';
+import ReadButton from './read/ReadButton';
 
 // Styles
 const Container = styled.div`
@@ -107,6 +108,17 @@ const ReadStory: React.FC<Props> = ({ story, me, onRemove, onUpdate }) => {
       <FlexBox>
         {story.thumbnail && <img src={story.thumbnail} alt={story.title} />}
       </FlexBox>
+
+      {me && (
+        <ReadButton
+          modal={modal}
+          onRemoveClick={onRemoveClick}
+          onConfirm={onConfirm}
+          onCancel={onCancel}
+          onUpdate={onUpdate}
+        />
+      )}
+
       <FlexBox>
         <DateBox>
           <span className="day">
