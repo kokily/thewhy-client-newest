@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { media } from '../../../libs/styles/utils';
+import Card from './Card';
 
 // Styles
 const Container = styled.div`
@@ -28,7 +29,7 @@ const CardList: React.FC<Props> = ({ stories }) => {
       {stories && stories.length > 0 ? (
         <>
           {stories.map((story) => (
-            <div id={story.id}>{story.title}</div>
+            <Card key={story.id} story={story} />
           ))}
         </>
       ) : (

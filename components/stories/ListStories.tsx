@@ -1,9 +1,10 @@
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { media } from '../../libs/styles/utils';
 import Search from '../common/Search';
 import CardList from './list/CardList';
+import useMedia from '../../libs/hooks/useMedia';
 
 // Styles
 const Container = styled.div`
@@ -20,10 +21,35 @@ const Contents = styled.div`
   }
 `;
 
-const SearchBox = styled.div`
+const Button = styled.a`
+  height: 40px;
+  font-family: '윤고딕';
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  background: white;
+  color: #db3603;
+  border: 2px solid #db3603;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.2s all;
+
+  &:hover {
+    background: #db3603;
+    color: white;
+  }
+`;
+
+const SearchBox = styled.div<{ small: boolean }>`
   display: flex;
   width: 100%;
-  justify-content: flex-end;
+  justify-content: space-between;
+
+  ${(props) =>
+    props.small &&
+    css`
+      justify-content: flex-end;
+    `}
 `;
 
 interface Props {
@@ -43,10 +69,18 @@ const ListStories: React.FC<Props> = ({
   onKeyPress,
   me,
 }) => {
+  const isSmall = useMedia('(max-width: 768px)');
+
   return (
     <Container>
       <Contents>
-        <SearchBox>
+        <SearchBox small={isSmall}>
+          {!isSmall && (
+            <Link href="/stories/add">
+              <Button>글 작성</Button>
+            </Link>
+          )}
+
           <Search
             mode="제목"
             search={search}

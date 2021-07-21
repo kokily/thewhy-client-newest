@@ -1,11 +1,11 @@
-import { GetServerSideProps, NextPage } from "next";
+import { GetServerSideProps, NextPage } from 'next';
 import Head from 'next/head';
-import PageTemplate from "../../components/common/PageTemplate";
-import TitleHeader from "../../components/common/TitleHeader";
-import ListStories from "../../components/stories/ListStories";
-import { initializeApollo } from "../../libs/apollo/client";
-import useListStories from "./hooks/useListStories";
-import { LIST_STORIES } from "./hooks/useScrollStories";
+import PageTemplate from '../../components/common/PageTemplate';
+import TitleHeader from '../../components/common/TitleHeader';
+import ListStories from '../../components/stories/ListStories';
+import { initializeApollo } from '../../libs/apollo/client';
+import { LIST_STORIES } from './graphql';
+import useListStories from './hooks/useListStories';
 
 interface Props {
   metaBody: string[];
@@ -76,6 +76,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
       metaTags,
     },
   };
-}
+};
 
 export default ListStoriesPage;
