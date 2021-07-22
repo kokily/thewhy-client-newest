@@ -63,3 +63,8 @@ interface ReplyType {
   created_at: string;
   updated_at?: string;
 }
+
+interface FaqType {
+  title: string;
+  content: string;
+}

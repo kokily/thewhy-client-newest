@@ -103,6 +103,13 @@ const Contents = styled.div`
   }
 `;
 
+const Footer = styled.div`
+  display: flex;
+  max-width: 720px;
+  width: 100%;
+  margin-top: 2.5rem;
+`;
+
 interface Props {}
 
 const Ability: React.FC<Props> = () => {
@@ -127,6 +134,14 @@ const Ability: React.FC<Props> = () => {
       <Contents>
         <img src="/images/education/ability.png" alt="직무역량 강화" />
       </Contents>
+
+      <Footer>
+        <img
+          className="footer"
+          src="/images/education/edu_footer.png"
+          alt="커뮤니케이션 교육"
+        />
+      </Footer>
     </Container>
   );
 };

@@ -103,6 +103,13 @@ const Contents = styled.div`
   }
 `;
 
+const Footer = styled.div`
+  display: flex;
+  max-width: 720px;
+  width: 100%;
+  margin-top: 2.5rem;
+`;
+
 interface Props {}
 
 const Communication: React.FC<Props> = () => {
@@ -150,6 +157,14 @@ const Communication: React.FC<Props> = () => {
           </ul>
         </div>
       </Contents>
+
+      <Footer>
+        <img
+          className="footer"
+          src="/images/education/edu_footer.png"
+          alt="커뮤니케이션 교육"
+        />
+      </Footer>
     </Container>
   );
 };

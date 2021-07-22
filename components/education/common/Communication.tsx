@@ -91,6 +91,7 @@ const Contents = styled.div`
       color: #777;
       margin-top: 0;
       padding-top: 1.2rem;
+      padding-left: 1.8rem;
 
       &.end {
         border-bottom: 2px solid rgb(73, 53, 134);
@@ -102,6 +103,13 @@ const Contents = styled.div`
       }
     }
   }
+`;
+
+const Footer = styled.div`
+  display: flex;
+  max-width: 720px;
+  width: 100%;
+  margin-top: 2.5rem;
 `;
 
 interface Props {
@@ -130,6 +138,14 @@ const Communication: React.FC<Props> = ({ img, title, body, data }) => {
           <List key={i} img={item.img} list={item.list} end={item.end} />
         ))}
       </Contents>
+
+      <Footer>
+        <img
+          className="footer"
+          src="/images/education/edu_footer.png"
+          alt="커뮤니케이션 교육"
+        />
+      </Footer>
     </Container>
   );
 };
