@@ -1,17 +1,17 @@
-import React, { useCallback, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { useRouter } from 'next/router';
-import { useQuery } from '@apollo/react-hooks';
-import { LIST_NOTICE } from '../graphql';
+import { useQuery } from '@apollo/client';
+import { LIST_QUESTIONS } from '../graphql';
 import { ME } from '../../../libs/graphql/auth';
 
-function useListNotices() {
+function useListQuestions() {
   const router = useRouter();
   const { page }: { page?: number } = router.query;
   const [search, setSearch] = useState('');
   const [title, setTitle] = useState('');
   const { data, loading, error, refetch } = useQuery<{
-    ListNotice: { notice: NoticeType[]; lastPage: number };
-  }>(LIST_NOTICE, {
+    ListQuestions: { questions: QuestionType[]; lastPage: number };
+  }>(LIST_QUESTIONS, {
     variables: {
       page: page ? parseInt(page.toString()) : 1,
       title,
@@ -42,20 +42,15 @@ function useListNotices() {
   };
 
   const onRead = (id: string) => {
-    router.push(`/notice/${id}`);
-  };
-
-  const onWrite = () => {
-    router.push('/notice/write');
+    router.push(`/question/${id}`);
   };
 
   return {
-    notice: data?.ListNotice.notice,
-    lastPage: data?.ListNotice.lastPage,
-    page: page ? page : 1,
+    questions: data?.ListQuestions.questions,
     me: me?.Me.me,
+    lastPage: data?.ListQuestions.lastPage,
+    page: page ? page : 1,
     onRead,
-    onWrite,
     search,
     onChange,
     onSearch,
@@ -66,4 +61,4 @@ function useListNotices() {
   };
 }
 
-export default useListNotices;
+export default useListQuestions;
