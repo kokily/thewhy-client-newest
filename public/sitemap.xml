@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+>
+  <url>
+    <loc>https://thewhy.kr/</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/about</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/about/locate</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/contact</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/education</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/education/business</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/education/leader</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/education/extended</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/education/ability</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/education/online</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/stories</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/notice</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+
+  <url>
+    <loc>https://thewhy.kr/question</loc>
+    <lastmod>2021-07-22T07:00:59.769Z</lastmod>
+  </url>
+</urlset>
